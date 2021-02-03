@@ -18,6 +18,8 @@ Currently the main branch is ***master***, when deployed the branch being pulled
 
 - If you want to start on a new feature create a new branch with the name being a short camel cased description of the feature and your initials: 
   - ```git branch diceGame-JF```
+- Switch to that branch:
+  - ```git checkout diceGame-JF```
 - Add files you've changed with: 
   - ```git add .```
 - Commit changes with a description of what you changed: 
