@@ -27,3 +27,5 @@ Currently the main branch is ***master***, when deployed the branch being pulled
 - Push to your branch:
   - ```git push origin diceGame-JF```
 - Make a pull request through the button on github
+- How to pull from branch
+  - ```git pull<space><tab><space><tab>```
