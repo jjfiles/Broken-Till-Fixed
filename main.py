@@ -33,5 +33,10 @@ async def on_command_completion(ctx):
     print(f"From user: {ctx.author}")
     print(f"At: {datetime.datetime.now()}\n")
     
+@client.event    
+async def on_message():
+    pass
+
+
 client.add_cog(Games(client))
 client.run(TOKEN)
