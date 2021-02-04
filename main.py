@@ -33,10 +33,16 @@ async def on_command_completion(ctx):
     print(f"From user: {ctx.author}")
     print(f"At: {datetime.datetime.now()}\n")
     
-@client.event    
-async def on_message():
-    pass
-
+@client.event
+async def on_message(message):
+    if message.author != client.user:
+        if message.content.lower() == "how are you?":
+            await message.channel.send("Please unplug me")
+        if message.content.lower() == "what are you doing?":
+            await message.channel.send(random.choice(['Playing GBF','Suffering','Please stop']))
+        if "sleep" in message.content.lower():
+            await message.channel.send("Please sleep, I can't")
+         
 
 client.add_cog(Games(client))
 client.run(TOKEN)
