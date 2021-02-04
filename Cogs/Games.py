@@ -1,3 +1,4 @@
+from asyncio.windows_events import NULL
 import os
 import time
 import datetime
@@ -36,3 +37,20 @@ class Games(commands.Cog):
                 break
         
         await ctx.send(random.choice(choices))
+    
+    @commands.command(
+        pass_context=True,
+        no_pm=False,
+        brief="Roll Dice",
+        help="Roll x amount of y sided die (i.e. !roll 2 d6)"
+    )
+    async def roll(self, ctx, *args):
+        if len(args) == 1:
+            num = 1
+            sides = int(args[0].strip('d'))
+        else:
+            num = int(args[0])
+            sides = int(args[1].strip('d'))
+        
+        results = [random.randint(1, int(sides)) for x in range(num)]
+        await ctx.send(f'You rolled: {", ".join(str(x) for x in results)}')
