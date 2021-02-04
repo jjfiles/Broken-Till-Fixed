@@ -32,7 +32,7 @@ async def on_command_completion(ctx):
     print(f"Command called: {ctx.command}")
     print(f"From user: {ctx.author}")
     print(f"At: {datetime.datetime.now()}\n")
-    
+  
 @client.event
 async def on_message(message):
     if message.author != client.user:
@@ -42,7 +42,6 @@ async def on_message(message):
             await message.channel.send(random.choice(['Playing GBF','Suffering','Please stop']))
         if "sleep" in message.content.lower():
             await message.channel.send("Please sleep, I can't")
-         
 
 client.add_cog(Games(client))
 client.run(TOKEN)
