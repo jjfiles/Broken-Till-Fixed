@@ -1,17 +1,10 @@
-import os
-import time
 import datetime
-import requests
-import asyncio
 
-import discord
-from discord.ext.commands import Bot
 from discord.ext import commands
 
 from settings import *
 from Cogs.Games import *
-
-c = discord.Client()
+from Cogs.Utils import *
 
 bot_prefix = "!"
 
@@ -42,6 +35,8 @@ async def on_message(message):
             await message.channel.send(random.choice(['Playing GBF','Suffering','Please stop']))
         if "sleep" in message.content.lower():
             await message.channel.send("Please sleep, I can't")
+    await client.process_commands(message)
 
 client.add_cog(Games(client))
+client.add_cog(Utils(client))
 client.run(TOKEN)

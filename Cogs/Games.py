@@ -1,13 +1,5 @@
-from asyncio.windows_events import NULL
-import os
-import time
-import datetime
 import random
-import requests
-import asyncio
 
-import discord
-from discord.ext.commands import Bot
 from discord.ext import commands
 
 from settings import *
